@@ -181,63 +181,69 @@ export default function ExampleShowcase() {
           </p>
         </div>
         
-        <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-          <div className="h-full animate-fade-in" ref={sliderRef}>
-            <ComparisonSlider 
-              beforeImage={EXAMPLE_PAIRS[activeIndex].before}
-              afterImage={EXAMPLE_PAIRS[activeIndex].after}
-              beforeLabel="Original Photo"
-              afterLabel="AI Generated Sketch"
-              beforeFocusPosition={EXAMPLE_PAIRS[activeIndex].beforeFocus}
-              afterFocusPosition={EXAMPLE_PAIRS[activeIndex].afterFocus}
-              beforeCustomPosition={EXAMPLE_PAIRS[activeIndex].beforeCustomPosition}
-              afterCustomPosition={EXAMPLE_PAIRS[activeIndex].afterCustomPosition}
-              sliderPosition={sliderPosition}
-              onPositionChange={handlePositionChange}
-            />
-          </div>
-          
-          {/* Navigation */}
-          <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-between px-6 z-20">
-            <button 
-              onClick={goToPrev}
-              className="bg-slate-900/80 hover:bg-slate-800/90 backdrop-blur-sm rounded-full p-3 text-white transition-all hover:scale-110"
-              aria-label="Previous example"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={goToNext}
-              className="bg-slate-900/80 hover:bg-slate-800/90 backdrop-blur-sm rounded-full p-3 text-white transition-all hover:scale-110"
-              aria-label="Next example"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-          
-          {/* Content overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 via-slate-900/70 to-transparent p-8 z-20">
-            <div className="max-w-2xl">
-              <h3 className="text-2xl font-bold text-white mb-3">{EXAMPLE_PAIRS[activeIndex].title}</h3>
-              <p className="text-slate-200 text-lg leading-relaxed">{EXAMPLE_PAIRS[activeIndex].description}</p>
+        {/* Improved container with proper aspect ratio */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Aspect ratio container - 4:3 ratio for better image display */}
+          <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl bg-slate-900">
+              <div className="h-full animate-fade-in" ref={sliderRef}>
+                <ComparisonSlider 
+                  beforeImage={EXAMPLE_PAIRS[activeIndex].before}
+                  afterImage={EXAMPLE_PAIRS[activeIndex].after}
+                  beforeLabel="Original Photo"
+                  afterLabel="AI Generated Sketch"
+                  beforeFocusPosition={EXAMPLE_PAIRS[activeIndex].beforeFocus}
+                  afterFocusPosition={EXAMPLE_PAIRS[activeIndex].afterFocus}
+                  beforeCustomPosition={EXAMPLE_PAIRS[activeIndex].beforeCustomPosition}
+                  afterCustomPosition={EXAMPLE_PAIRS[activeIndex].afterCustomPosition}
+                  sliderPosition={sliderPosition}
+                  onPositionChange={handlePositionChange}
+                />
+              </div>
+              
+              {/* Navigation */}
+              <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-between px-6 z-20">
+                <button 
+                  onClick={goToPrev}
+                  className="bg-slate-900/80 hover:bg-slate-800/90 backdrop-blur-sm rounded-full p-3 text-white transition-all hover:scale-110"
+                  aria-label="Previous example"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button 
+                  onClick={goToNext}
+                  className="bg-slate-900/80 hover:bg-slate-800/90 backdrop-blur-sm rounded-full p-3 text-white transition-all hover:scale-110"
+                  aria-label="Next example"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+              
+              {/* Content overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 via-slate-900/70 to-transparent p-8 z-20">
+                <div className="max-w-2xl">
+                  <h3 className="text-2xl font-bold text-white mb-3">{EXAMPLE_PAIRS[activeIndex].title}</h3>
+                  <p className="text-slate-200 text-lg leading-relaxed">{EXAMPLE_PAIRS[activeIndex].description}</p>
+                </div>
+              </div>
+              
+              {/* Indicator dots */}
+              <div className="absolute top-6 right-6 flex space-x-2 z-20">
+                {EXAMPLE_PAIRS.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setActiveIndex(index)
+                      setSliderPosition(50)
+                    }}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      index === activeIndex ? 'bg-blue-400 w-8' : 'bg-slate-400/50 hover:bg-slate-300/70'
+                    }`}
+                    aria-label={`Go to example ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          
-          {/* Indicator dots */}
-          <div className="absolute top-6 right-6 flex space-x-2 z-20">
-            {EXAMPLE_PAIRS.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setActiveIndex(index)
-                  setSliderPosition(50)
-                }}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === activeIndex ? 'bg-blue-400 w-8' : 'bg-slate-400/50 hover:bg-slate-300/70'
-                }`}
-                aria-label={`Go to example ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>
@@ -247,12 +253,12 @@ export default function ExampleShowcase() {
         {FEATURE_CARDS.map((feature, index) => (
           <div key={index} className="group relative">
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              {/* Image Section */}
-              <div className="relative h-64 overflow-hidden">
+              {/* Image Section with proper aspect ratio */}
+              <div className="relative w-full" style={{ paddingBottom: '66.67%' }}>
                 <img 
                   src={feature.image} 
                   alt={feature.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
                 
@@ -310,11 +316,12 @@ export default function ExampleShowcase() {
             {STANDALONE_EXAMPLES.map((example, index) => (
               <div key={index} className="flex-shrink-0 px-3" style={{ width: `${100 / STANDALONE_EXAMPLES.length}%` }}>
                 <div className="group relative overflow-hidden rounded-xl bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="relative h-80 overflow-hidden">
+                  {/* Image with proper aspect ratio */}
+                  <div className="relative w-full" style={{ paddingBottom: '133.33%' }}>
                     <img 
                       src={example.image} 
                       alt={example.title}
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     

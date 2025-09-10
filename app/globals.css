@@ -138,6 +138,7 @@
   @apply absolute top-0 left-0 w-full h-full;
   background-size: cover !important;
   background-repeat: no-repeat;
+  background-position: center center;
   transition: filter 0.3s ease;
 }
 
@@ -172,6 +173,7 @@
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.3);
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .comparison-slider:hover .slider-button {
