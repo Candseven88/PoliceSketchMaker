@@ -30,7 +30,7 @@ export default function AnimatedBackground({
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    // Particle system
+    // Floating particles for subtle effect
     const particles: Array<{
       x: number
       y: number
@@ -41,29 +41,28 @@ export default function AnimatedBackground({
       color: string
     }> = []
 
-    // Create particles
+    // Create fewer, more subtle particles
     const createParticles = () => {
-      const particleCount = Math.min(50, Math.floor(window.innerWidth / 30))
+      const particleCount = Math.min(20, Math.floor(window.innerWidth / 60))
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          size: Math.random() * 2 + 1,
-          opacity: Math.random() * 0.3 + 0.1,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          size: Math.random() * 1.5 + 0.5,
+          opacity: Math.random() * 0.1 + 0.05,
           color: variant === 'light' ? 'rgba(59, 130, 246, ' : 'rgba(148, 163, 184, '
         })
       }
     }
     createParticles()
 
-    // Animation loop
+    // Animation loop for subtle particles
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Update and draw particles
-      particles.forEach((particle, index) => {
+      particles.forEach((particle) => {
         // Update position
         particle.x += particle.vx
         particle.y += particle.vy
@@ -81,23 +80,6 @@ export default function AnimatedBackground({
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         ctx.fillStyle = particle.color + particle.opacity + ')'
         ctx.fill()
-
-        // Draw connections to nearby particles
-        particles.slice(index + 1).forEach(otherParticle => {
-          const dx = particle.x - otherParticle.x
-          const dy = particle.y - otherParticle.y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-
-          if (distance < 100) {
-            const opacity = (1 - distance / 100) * 0.1
-            ctx.beginPath()
-            ctx.moveTo(particle.x, particle.y)
-            ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = particle.color + opacity + ')'
-            ctx.lineWidth = 1
-            ctx.stroke()
-          }
-        })
       })
 
       requestAnimationFrame(animate)
@@ -123,20 +105,49 @@ export default function AnimatedBackground({
     }
   }
 
+  // Get glow effects based on variant
+  const getGlowEffects = () => {
+    const baseEffects = (
+      <>
+        {/* Background grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: 'linear-gradient(to right, #64748b 1px, transparent 1px), linear-gradient(to bottom, #64748b 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }}
+        />
+        
+        {/* Animated glow effects - 蓝黄光晕 */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-[120px] opacity-20 animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-yellow-400 rounded-full filter blur-[100px] opacity-10 animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        
+        {/* Additional subtle glows for variety */}
+        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-purple-500 rounded-full filter blur-[80px] opacity-5 animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/3 left-1/2 w-32 h-32 bg-cyan-400 rounded-full filter blur-[60px] opacity-8 animate-pulse-slow" style={{ animationDelay: '3s' }} />
+      </>
+    )
+
+    return baseEffects
+  }
+
   return (
     <div className={`relative ${getBackgroundClasses()} ${className}`}>
-      {/* Animated canvas background */}
+      {/* Glow effects */}
+      {getGlowEffects()}
+      
+      {/* Subtle floating particles */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 1 }}
       />
       
       {/* Overlay gradient for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/20 pointer-events-none" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/10 pointer-events-none" style={{ zIndex: 2 }} />
       
       {/* Content */}
-      <div className="relative" style={{ zIndex: 2 }}>
+      <div className="relative" style={{ zIndex: 3 }}>
         {children}
       </div>
     </div>

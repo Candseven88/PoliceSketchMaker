@@ -140,7 +140,15 @@ export default function ExampleShowcase() {
   // Auto-scroll carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      setCarouselIndex((current) => (current + 1) % STANDALONE_EXAMPLES.length)
+      setCarouselIndex((current) => {
+        // 确保循环轮播，每次移动一个位置
+        const nextIndex = current + 1
+        // 当到达最后一组时，重置到开始
+        if (nextIndex >= STANDALONE_EXAMPLES.length - 2) {
+          return 0
+        }
+        return nextIndex
+      })
     }, 3000)
 
     return () => clearInterval(interval)
