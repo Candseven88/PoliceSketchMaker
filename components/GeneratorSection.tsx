@@ -58,10 +58,10 @@ export default function GeneratorSection() {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-8">
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-2 border border-slate-700/50">
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-2 border border-slate-700/50 inline-flex">
             <button
               onClick={() => setActiveTab('upload')}
-              className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap ${
                 activeTab === 'upload'
                   ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
                   : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
@@ -72,7 +72,7 @@ export default function GeneratorSection() {
             </button>
             <button
               onClick={() => setActiveTab('custom')}
-              className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-300 whitespace-nowrap ml-2 ${
                 activeTab === 'custom'
                   ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
                   : 'text-slate-300 hover:text-white hover:bg-slate-700/50'

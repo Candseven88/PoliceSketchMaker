@@ -254,23 +254,26 @@ export default function ExampleShowcase() {
           <div key={index} className="group relative">
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               {/* Image Section with proper aspect ratio */}
-              <div className="relative w-full" style={{ paddingBottom: '66.67%' }}>
+              <div className="relative w-full overflow-hidden" style={{ paddingBottom: '66.67%' }}>
                 <img 
                   src={feature.image} 
                   alt={feature.title}
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 />
+                {/* Always visible gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Badge */}
                 {feature.badge && (
-                  <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
                     {feature.badge}
                   </div>
                 )}
 
                 {/* Icon */}
-                <div className="absolute top-4 left-4 bg-slate-900/70 backdrop-blur-sm rounded-full p-3 text-blue-400">
+                <div className="absolute top-4 left-4 bg-slate-900/70 backdrop-blur-sm rounded-full p-3 text-blue-400 z-10">
                   {feature.icon}
                 </div>
               </div>
@@ -309,29 +312,30 @@ export default function ExampleShowcase() {
           <div 
             className="flex transition-transform duration-1000 ease-in-out"
             style={{ 
-              transform: `translateX(-${carouselIndex * (100 / 3)}%)`,
-              width: `${STANDALONE_EXAMPLES.length * (100 / 3)}%`
+              transform: `translateX(-${carouselIndex * 33.333}%)`,
+              width: `${STANDALONE_EXAMPLES.length * 33.333}%`
             }}
           >
             {STANDALONE_EXAMPLES.map((example, index) => (
               <div key={index} className="flex-shrink-0 px-3" style={{ width: `${100 / STANDALONE_EXAMPLES.length}%` }}>
                 <div className="group relative overflow-hidden rounded-xl bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300">
                   {/* Image with proper aspect ratio */}
-                  <div className="relative w-full" style={{ paddingBottom: '133.33%' }}>
+                  <div className="relative w-full overflow-hidden" style={{ paddingBottom: '133.33%' }}>
                     <img 
                       src={example.image} 
                       alt={example.title}
                       className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     {/* Category Badge */}
-                    <div className="absolute top-3 left-3 bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    <div className="absolute top-3 left-3 bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold z-10">
                       {example.category}
                     </div>
 
                     {/* Content Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 z-10">
                       <h4 className="text-white font-semibold text-lg">{example.title}</h4>
                       <div className="flex items-center text-blue-400 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <Play className="w-4 h-4 mr-2" />
