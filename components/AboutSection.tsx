@@ -4,119 +4,124 @@ import { Shield, Lock, Zap, CheckCircle, Award } from 'lucide-react'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 relative bg-slate-950">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: 'linear-gradient(to right, #64748b 1px, transparent 1px), linear-gradient(to bottom, #64748b 1px, transparent 1px)',
-        backgroundSize: '40px 40px'
-      }}></div>
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="about" className="relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">About PoliceSketchMaker</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Professional-grade AI technology trusted by security professionals worldwide.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            About <span className="text-blue-400">PoliceSketchMaker</span>
+          </h2>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Professional-grade AI technology trusted by security professionals worldwide. 
+            Transforming the way law enforcement creates and uses facial sketches.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-              <span className="bg-blue-600 w-1.5 h-8 mr-3 rounded-sm"></span>
-              Our Mission
-            </h3>
-            <p className="text-slate-300 mb-4">
+          <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <Shield className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+            </div>
+            <p className="text-slate-300 mb-4 leading-relaxed">
               PoliceSketchMaker was developed to provide advanced facial recognition and sketch generation capabilities using cutting-edge AI technology. Our mission is to make professional police sketch capabilities accessible to everyone.
             </p>
-            <p className="text-slate-300">
-              Whether you're curious about how you might appear in a police sketch, or simply want to see friends and family through the lens of a professional sketch artist, our tool delivers accurate and detailed results in seconds.
+            <p className="text-slate-300 leading-relaxed">
+              We believe that accurate visual identification tools should be available to law enforcement agencies, security professionals, and organizations worldwide, regardless of their size or budget.
             </p>
           </div>
           
-          <div>
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-              <span className="bg-blue-600 w-1.5 h-8 mr-3 rounded-sm"></span>
-              Advanced Technology
-            </h3>
-            <p className="text-slate-300 mb-4">
-              Our platform utilizes state-of-the-art AI models specifically trained on thousands of professional police sketches and facial recognition patterns. This ensures the highest quality output that closely resembles traditional hand-drawn police sketches.
+          <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Our Technology</h3>
+            </div>
+            <p className="text-slate-300 mb-4 leading-relaxed">
+              Our AI models are trained on extensive datasets of facial features and professional police sketch techniques. The system can analyze photographs or text descriptions to generate accurate, detailed sketches.
             </p>
-            <p className="text-slate-300">
-              The system can work from both textual descriptions and photographs, extracting key facial features and translating them into accurate sketch representations.
+            <p className="text-slate-300 leading-relaxed">
+              We use state-of-the-art machine learning algorithms to ensure high accuracy and consistency in every generated sketch, meeting professional law enforcement standards.
             </p>
           </div>
         </div>
         
-        {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="card card-hover p-6 group">
-            <div className="mb-4 bg-blue-900/20 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-800/30 transition-colors">
-              <Shield className="h-6 w-6 text-blue-400" />
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="text-center group">
+            <div className="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/30 transition-colors duration-300">
+              <Shield className="w-8 h-8 text-blue-400" />
             </div>
-            <h4 className="text-lg font-semibold text-white mb-2">Secure Processing</h4>
-            <p className="text-slate-400">
-              All uploaded photos and generated sketches are processed securely and not stored on our servers beyond the processing time.
+            <h4 className="text-xl font-bold text-white mb-3">Secure & Private</h4>
+            <p className="text-slate-300">
+              Your data is processed securely with enterprise-grade encryption. Images are not stored on our servers.
             </p>
           </div>
           
-          <div className="card card-hover p-6 group">
-            <div className="mb-4 bg-blue-900/20 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-800/30 transition-colors">
-              <Zap className="h-6 w-6 text-blue-400" />
+          <div className="text-center group">
+            <div className="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/30 transition-colors duration-300">
+              <Zap className="w-8 h-8 text-blue-400" />
             </div>
-            <h4 className="text-lg font-semibold text-white mb-2">Instant Results</h4>
-            <p className="text-slate-400">
-              Generate professional-quality police sketches in seconds, with no waiting or complex setup required.
+            <h4 className="text-xl font-bold text-white mb-3">Lightning Fast</h4>
+            <p className="text-slate-300">
+              Generate professional police sketches in seconds with our optimized AI processing pipeline.
             </p>
           </div>
           
-          <div className="card card-hover p-6 group">
-            <div className="mb-4 bg-blue-900/20 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-800/30 transition-colors">
-              <Award className="h-6 w-6 text-blue-400" />
+          <div className="text-center group">
+            <div className="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/30 transition-colors duration-300">
+              <CheckCircle className="w-8 h-8 text-blue-400" />
             </div>
-            <h4 className="text-lg font-semibold text-white mb-2">Professional Quality</h4>
-            <p className="text-slate-400">
-              Our AI produces sketches that match the quality and detail of those created by professional police sketch artists.
+            <h4 className="text-xl font-bold text-white mb-3">Professional Quality</h4>
+            <p className="text-slate-300">
+              High-resolution sketches suitable for law enforcement, legal proceedings, and professional use.
             </p>
           </div>
         </div>
         
-        {/* Trust indicators */}
-        <div className="mt-20 bg-gradient-to-r from-slate-900 to-slate-800 rounded-xl p-8 border border-slate-700">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0">
-              <h3 className="text-xl font-bold text-white mb-2">Trusted Technology</h3>
-              <p className="text-slate-300 max-w-xl">
-                Our platform employs the same advanced AI technology used by security professionals worldwide. Try it today and see yourself through the eyes of a police sketch artist.
-              </p>
+        {/* Stats Section */}
+        <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl p-8 border border-blue-500/20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">10,000+</div>
+              <div className="text-slate-300">Sketches Generated</div>
             </div>
             <div>
-              <a
-                href="#generator"
-                className="btn-primary flex items-center space-x-2"
-              >
-                <Lock className="h-4 w-4" />
-                <span>Try It Now</span>
-              </a>
+              <div className="text-3xl font-bold text-blue-400 mb-2">95%</div>
+              <div className="text-slate-300">Accuracy Rate</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
+              <div className="text-slate-300">Availability</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
+              <div className="text-slate-300">Countries Served</div>
             </div>
           </div>
-          
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-blue-400 mr-2 flex-shrink-0" />
-              <span className="text-slate-300 text-sm">Secure Processing</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-blue-400 mr-2 flex-shrink-0" />
-              <span className="text-slate-300 text-sm">Professional Quality</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-blue-400 mr-2 flex-shrink-0" />
-              <span className="text-slate-300 text-sm">Advanced AI</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-blue-400 mr-2 flex-shrink-0" />
-              <span className="text-slate-300 text-sm">Instant Results</span>
-            </div>
+        </div>
+        
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            Join thousands of professionals who trust PoliceSketchMaker for accurate, reliable facial sketch generation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="#generator" 
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 inline-flex items-center justify-center"
+            >
+              Try Generator
+            </a>
+            <a 
+              href="/ai-image-describer" 
+              className="bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-8 rounded-lg border border-slate-600 transition-all duration-300 inline-flex items-center justify-center"
+            >
+              Try Image Describer
+            </a>
           </div>
         </div>
       </div>

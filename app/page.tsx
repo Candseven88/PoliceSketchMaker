@@ -8,6 +8,7 @@ import GeneratorSection from '@/components/GeneratorSection'
 import ExampleShowcase from '@/components/ExampleShowcase'
 import AboutSection from '@/components/AboutSection'
 import Footer from '@/components/Footer'
+import AnimatedBackground from '@/components/AnimatedBackground'
 
 function HomePage() {
   return (
@@ -38,24 +39,32 @@ function HomePage() {
       <Header />
       
       <main>
-        {/* Hero Section */}
+        {/* Hero Section - 保持原样 */}
         <HeroSection />
         
-        {/* Generator Section */}
-        <GeneratorSection />
-        
-        {/* Examples Section */}
-        <section id="examples" className="py-24 bg-slate-950">
+        {/* Generator Section - 添加动画背景 */}
+        <AnimatedBackground variant="dark" className="py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ExampleShowcase />
+            <GeneratorSection />
           </div>
-        </section>
+        </AnimatedBackground>
         
-        {/* About Section */}
-        <AboutSection />
+        {/* Examples Section - 添加动画背景 */}
+        <AnimatedBackground variant="default" className="py-24">
+          <section id="examples">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <ExampleShowcase />
+            </div>
+          </section>
+        </AnimatedBackground>
+        
+        {/* About Section - 添加动画背景 */}
+        <AnimatedBackground variant="light" className="py-24">
+          <AboutSection />
+        </AnimatedBackground>
 
-        {/* SEO Content Section */}
-        <section className="py-16 bg-slate-900">
+        {/* SEO Content Section - 添加动画背景 */}
+        <AnimatedBackground variant="dark" className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Master the Art of Sketch Making</h2>
@@ -66,41 +75,50 @@ function HomePage() {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-slate-800 rounded-xl p-6">
+              <div className="bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300">
                 <h3 className="text-xl font-bold mb-3 text-blue-400">How to Make Sketch of Face</h3>
                 <p className="text-slate-300 mb-4">
                   Learn professional techniques for creating realistic facial sketches. Our AI understands 
                   the same methods used by police sketch artists to capture unique characteristics and features.
                 </p>
-                <a href="/blog/how-to-make-sketch-of-face-complete-guide" className="text-blue-400 hover:text-blue-300 font-semibold">
-                  Learn More →
+                <a href="/blog/how-to-make-sketch-of-face-complete-guide" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center group">
+                  Learn More 
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
               
-              <div className="bg-slate-800 rounded-xl p-6">
+              <div className="bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300">
                 <h3 className="text-xl font-bold mb-3 text-blue-400">AI Image Describer</h3>
                 <p className="text-slate-300 mb-4">
                   Generate SEO-friendly alt text and detailed descriptions for any image. Perfect for 
                   improving website accessibility and search engine rankings with AI-powered analysis.
                 </p>
-                <a href="/ai-image-describer" className="text-blue-400 hover:text-blue-300 font-semibold">
-                  Try Image Describer →
+                <a href="/ai-image-describer" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center group">
+                  Try Image Describer 
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
               
-              <div className="bg-slate-800 rounded-xl p-6">
+              <div className="bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300">
                 <h3 className="text-xl font-bold mb-3 text-blue-400">Professional Sketch Services</h3>
                 <p className="text-slate-300 mb-4">
                   Discover how much police sketch artists make and learn about career opportunities in 
                   forensic art, courtroom sketching, and crime scene documentation.
                 </p>
-                <a href="/about" className="text-blue-400 hover:text-blue-300 font-semibold">
-                  Learn About Careers →
+                <a href="/about" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center group">
+                  Learn About Careers 
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
             </div>
             
-            <div className="mt-12 bg-slate-800 rounded-xl p-8">
+            <div className="mt-12 bg-slate-800/80 backdrop-blur-sm rounded-xl p-8 border border-slate-700/50">
               <h3 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h3>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
@@ -133,7 +151,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedBackground>
       </main>
       
       <Footer />
