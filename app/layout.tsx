@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Police Sketch Maker',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Police Sketch Maker - Professional AI Sketch Generator',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Police Sketch Maker - How to Make Professional Sketches',
     description: 'AI-powered police sketch maker. Learn how to make sketch of face and create professional sketches online.',
-    images: ['/og-image.jpg'],
+    images: ['/icon.png'],
     creator: '@policesketchai',
   },
   alternates: {

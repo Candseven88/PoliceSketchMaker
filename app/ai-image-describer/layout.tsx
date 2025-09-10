@@ -85,32 +85,32 @@ export default function AIImageDescriberLayout({
     '@type': 'HowTo',
     name: 'How to Describe Images with AI',
     description: 'Step-by-step guide to generate AI-powered image descriptions and alt text',
-    image: 'https://policesketchmaker.com/og-image-describer.jpg',
+    image: 'https://policesketchmaker.com/icon.png',
     totalTime: 'PT2M',
     step: [
       {
         '@type': 'HowToStep',
         name: 'Upload Image',
         text: 'Upload your image file (JPG, PNG, WebP, GIF up to 10MB)',
-        image: 'https://policesketchmaker.com/step-upload.jpg'
+        image: 'https://policesketchmaker.com/icon.png'
       },
       {
         '@type': 'HowToStep',
         name: 'AI Analysis',
         text: 'Our AI analyzes the image content, objects, people, and context',
-        image: 'https://policesketchmaker.com/step-analyze.jpg'
+        image: 'https://policesketchmaker.com/icon.png'
       },
       {
         '@type': 'HowToStep',
         name: 'Get Results',
         text: 'Receive detailed description, SEO-friendly alt text, and keywords',
-        image: 'https://policesketchmaker.com/step-results.jpg'
+        image: 'https://policesketchmaker.com/icon.png'
       },
       {
         '@type': 'HowToStep',
         name: 'Copy and Use',
         text: 'Copy the generated text and use it for alt attributes or content',
-        image: 'https://policesketchmaker.com/step-copy.jpg'
+        image: 'https://policesketchmaker.com/icon.png'
       }
     ]
   }
