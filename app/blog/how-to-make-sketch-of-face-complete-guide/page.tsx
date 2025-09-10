@@ -14,7 +14,7 @@ export default function FaceSketchGuide() {
     <div className="min-h-screen bg-slate-950 text-slate-50">
       <Header />
       
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         {/* Article Header */}
         <header className="mb-12">
           <div className="text-center mb-8">

@@ -71,7 +71,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-slate-950 text-slate-50">
       <Header />
       
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         {/* Hero Section */}
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
