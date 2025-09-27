@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    --animation-timing: 0.2s;
+  }
+  
+  body {
+    @apply bg-slate-950 text-slate-50;
+  }
+  
+  ::selection {
+    @apply bg-blue-500/30 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-5 rounded-md transition-all duration-200 
+    shadow-[0_0_0_3px_rgba(59,130,246,0.3)] hover:shadow-[0_0_0_4px_rgba(59,130,246,0.4)]
+    active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium py-2.5 px-5 rounded-md transition-all duration-200
+    shadow-[0_0_0_3px_rgba(51,65,85,0.3)] hover:shadow-[0_0_0_4px_rgba(51,65,85,0.4)]
+    active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-outline {
+    @apply border border-slate-700 hover:border-slate-600 bg-transparent hover:bg-slate-800/50 text-slate-300 font-medium 
+    py-2.5 px-5 rounded-md transition-all duration-200 active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-slate-900 border border-slate-700 text-slate-200 rounded-md focus:outline-none 
+    focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200 placeholder:text-slate-500;
+  }
+  
+  .card {
+    @apply bg-slate-900 border border-slate-800 rounded-xl shadow-lg shadow-slate-900/20 overflow-hidden;
+  }
+  
+  .card-hover {
+    @apply hover:border-slate-700 hover:shadow-slate-900/40 transition-all duration-300;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-500/20 text-blue-400;
+  }
+  
+  .badge-red {
+    @apply bg-red-500/20 text-red-400;
+  }
+  
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  .animate-border {
+    @apply relative;
+    background: linear-gradient(90deg, #1e293b 50%, transparent 0) repeat-x,
+                linear-gradient(90deg, #1e293b 50%, transparent 0) repeat-x,
+                linear-gradient(0deg, #1e293b 50%, transparent 0) repeat-y,
+                linear-gradient(0deg, #1e293b 50%, transparent 0) repeat-y;
+    background-size: 8px 1px, 8px 1px, 1px 8px, 1px 8px;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    animation: border-dance 0.5s infinite linear;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes border-dance {
+  0% {
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+  }
+  100% {
+    background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px;
+  }
+}
+
+/* Image comparison slider */
+.comparison-slider {
+  @apply relative overflow-hidden rounded-lg;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  touch-action: none;
+}
+
+.comparison-slider .before,
+.comparison-slider .after {
+  @apply absolute top-0 left-0 w-full h-full;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: filter 0.3s ease;
+}
+
+.comparison-slider .before {
+  clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+}
+
+.comparison-slider:hover .before,
+.comparison-slider:hover .after {
+  filter: brightness(1.05);
+}
+
+.comparison-slider .slider {
+  @apply absolute top-0 bottom-0 w-1 bg-blue-500 z-10;
+  left: var(--position);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-slider:hover .slider {
+  transform: scaleX(1.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.comparison-slider .slider-button {
+  @apply absolute bg-blue-500 rounded-full flex items-center justify-center text-white;
+  content: '';
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.comparison-slider:hover .slider-button {
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.comparison-slider .slider-button::after {
+  content: '↔';
+  @apply absolute text-white font-bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+} 
