@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo:update": "node scripts/update-search-engines.js",
+    "seo:submit": "node scripts/submit-to-search-engines.js"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.8.3",

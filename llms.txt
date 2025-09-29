@@ -1,0 +1,261 @@
+# PoliceSketchMaker - LLM Context File
+
+## Project Overview
+PoliceSketchMaker is a professional AI-powered police sketch generation tool designed for law enforcement and security professionals. The application allows users to generate realistic police sketches from text descriptions or uploaded photos using advanced AI models.
+
+**Live URL**: https://policesketchmaker.it.com
+**Repository**: Police Sketch Maker
+**Version**: 1.0.0
+**Status**: Production Ready
+
+## Core Features
+
+### Primary Functions
+1. **Police Sketch Generation**
+   - Custom prompt input with AI language processing (GLM-4-Flash-250414)
+   - Photo upload with automatic feature extraction
+   - Template-guided descriptions for consistent results
+   - 512x512 resolution standard output
+
+2. **AI Image Describer Tool**
+   - Upload any image for detailed AI analysis
+   - Generate SEO-friendly alt text automatically
+   - Extract relevant keywords from images
+   - Support for JPG, PNG, WebP, GIF (up to 10MB)
+   - Free service with no registration required
+
+3. **Educational Content & SEO**
+   - Comprehensive blog with sketch-making tutorials
+   - Police sketch artist career and salary guides
+   - Professional resources for law enforcement
+   - SEO-optimized content targeting sketch-related keywords
+
+## Technical Architecture
+
+### Frontend Stack
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **UI Components**: React Hot Toast, React Dropzone
+- **Image Comparison**: React Before/After Slider Component
+- **Analytics**: Vercel Analytics
+
+### Backend & APIs
+- **Runtime**: Node.js with Next.js API routes
+- **Image Generation**: Apify datastorm/text-to-image actor
+- **Language Processing**: GLM-4-Flash-250414 (BigModel)
+- **Feature Extraction**: BigModel GLM-4V model
+- **Payment Processing**: PayPal integration
+
+### Deployment & Infrastructure
+- **Platform**: Vercel with automatic deployments
+- **Domain**: Custom domain with SSL
+- **CDN**: Global CDN for fast content delivery
+- **Environment**: Production and development configurations
+
+## Project Structure
+
+```
+66-PoliceSketchMaker/
+├── app/                          # Next.js App Router
+│   ├── api/                      # API routes
+│   │   ├── generate-sketch/      # Apify sketch generation
+│   │   ├── extract-features/     # BigModel feature extraction
+│   │   ├── process-prompt/       # GLM-4-Flash language processing
+│   │   ├── describe-image/       # AI image description
+│   │   ├── create-paypal-order/  # PayPal payment creation
+│   │   ├── capture-paypal-order/ # PayPal payment capture
+│   │   └── submit-to-search-engines/ # SEO automation
+│   ├── blog/                     # Educational content
+│   ├── about/                    # About page
+│   ├── contact/                  # Contact page
+│   ├── privacy/                  # Privacy policy
+│   ├── ai-image-describer/       # Image description tool
+│   └── admin/                    # Admin tools
+├── components/                   # React components
+│   ├── SketchGenerator.tsx       # Main sketch generation
+│   ├── ImageUploader.tsx         # Photo upload functionality
+│   ├── CustomPromptForm.tsx      # Prompt input with templates
+│   ├── ImageDescriberTool.tsx    # Image description tool
+│   ├── PayPalPaymentButton.tsx   # Payment integration
+│   └── [other UI components]
+├── lib/                          # Utility libraries
+├── public/                       # Static assets
+└── scripts/                      # Automation scripts
+```
+
+## API Endpoints
+
+### Core APIs
+- `POST /api/process-prompt` - Process user descriptions with GLM-4-Flash-250414
+- `POST /api/generate-sketch` - Generate sketches using Apify (paid: $0.80)
+- `POST /api/extract-features` - Extract features from photos (free)
+- `POST /api/describe-image` - AI image analysis and description
+
+### Payment APIs
+- `POST /api/create-paypal-order` - Create PayPal payment order
+- `POST /api/capture-paypal-order` - Capture completed payment
+
+### SEO & Automation APIs
+- `POST /api/submit-to-search-engines` - Submit URLs to search engines
+- `POST /api/indexnow` - IndexNow protocol for instant indexing
+
+## Environment Configuration
+
+Required environment variables:
+```env
+# API Keys
+APIFY_API_TOKEN=your_apify_api_token_here
+BIGMODEL_API_KEY=your_bigmodel_api_key_here
+
+# PayPal Configuration
+NEXT_PUBLIC_PAYPAL_CLIENT_ID=your_paypal_client_id_here
+PAYPAL_SECRET=your_paypal_secret_here
+PAYPAL_MODE=sandbox # or 'live' for production
+
+# Application URLs
+NEXT_PUBLIC_APP_URL=https://policesketchmaker.it.com
+
+# Analytics
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+## Business Model & Monetization
+
+### Revenue Streams
+1. **Sketch Generation**: $0.80 per sketch via PayPal
+2. **Feature Extraction**: Free (encourages user engagement)
+3. **Advertising**: ADSTERRA integration for additional revenue
+
+### Cost Structure
+- Apify Credits: ~$0.10-0.20 per sketch
+- BigModel Credits: ~$0.01 per feature extraction
+- Vercel Hosting: Free tier sufficient for current scale
+
+## SEO Strategy & Content Marketing
+
+### Target Keywords
+- Primary: "police sketch maker", "how to make sketch of face"
+- Secondary: "make picture sketch", "photo sketch maker online"
+- Long-tail: "AI police sketch generator", "criminal face generator"
+
+### Content Strategy
+- Educational blog posts about sketch-making techniques
+- Police sketch artist career guides
+- Professional tutorials for law enforcement
+- SEO-optimized meta descriptions and structured data
+
+### Search Engine Optimization
+- **IndexNow Protocol**: Automatic submission to Bing, Yandex
+- **Verification Files**: Yandex webmaster, IndexNow API key
+- **Structured Data**: Organization and website schema markup
+- **Sitemap**: Automated generation and submission
+
+## Key Components & Features
+
+### Input Templates
+1. **Basic Description**: Simple structure for basic descriptions
+2. **Detailed Features**: Comprehensive facial feature descriptions
+3. **Special Features**: Unique characteristics and clothing
+4. **Professional Template**: Complete police sketch description
+
+### AI Processing Pipeline
+1. User inputs description or uploads photo
+2. GLM-4-Flash-250414 processes and enhances text descriptions
+3. Apify generates high-quality sketch from processed prompt
+4. User receives 512x512 resolution police sketch
+
+### Payment Integration
+- PayPal JavaScript SDK integration
+- Secure order creation and capture flow
+- Real-time payment status updates
+- Error handling and user feedback
+
+## Development Guidelines
+
+### Code Standards
+- TypeScript for type safety
+- ESLint configuration for code quality
+- Responsive design with Tailwind CSS
+- Component-based architecture with React
+
+### Error Handling
+- Comprehensive try-catch blocks in API routes
+- User-friendly error messages with React Hot Toast
+- Fallback UI components for failed states
+- Logging for debugging and monitoring
+
+### Performance Optimization
+- Next.js Image component for optimized images
+- Code splitting and lazy loading
+- Vercel Edge Functions for fast API responses
+- CDN caching for static assets
+
+## Security & Privacy
+
+### Data Protection
+- No persistent user data storage
+- Images processed in memory only
+- Secure API key management
+- HTTPS enforced in production
+
+### Compliance
+- GDPR compliant (no personal data collection)
+- Privacy policy and terms of service
+- Secure payment processing through PayPal
+- Input validation and sanitization
+
+## Deployment & Operations
+
+### Deployment Process
+1. GitHub integration with Vercel
+2. Automatic deployments on main branch push
+3. Environment variables configured in Vercel dashboard
+4. Custom domain with SSL certificate
+
+### Monitoring & Analytics
+- Vercel Analytics for performance monitoring
+- Google Analytics for user behavior tracking
+- Error tracking and logging
+- SEO performance monitoring
+
+## Future Roadmap
+
+### Planned Features
+1. User accounts for sketch history
+2. Bulk generation capabilities
+3. Advanced template options
+4. Multiple export formats
+5. Public API for integrations
+
+### Technical Improvements
+1. Redis caching for API responses
+2. Advanced analytics and A/B testing
+3. Internationalization support
+4. Progressive Web App capabilities
+5. Enhanced mobile experience
+
+## Support & Documentation
+
+### Documentation Files
+- `README.md` - Complete setup and usage guide
+- `DEPLOYMENT.md` - Vercel deployment instructions
+- `API_KEY_SETUP.md` - API configuration guide
+- `PAYPAL_SETUP.md` - Payment integration guide
+- `PROJECT_SUMMARY.md` - Detailed project overview
+
+### Troubleshooting
+- Common issues and solutions documented
+- API error handling guides
+- Performance optimization tips
+- Security best practices
+
+## Contact & Support
+- **Email**: support@policesketchmaker.it.com
+- **Website**: https://policesketchmaker.it.com
+- **Documentation**: Comprehensive guides included in repository
+
+---
+
+This llms.txt file provides complete context for AI assistants working on the PoliceSketchMaker project. It includes technical architecture, business model, development guidelines, and operational procedures to enable effective collaboration and development assistance. 

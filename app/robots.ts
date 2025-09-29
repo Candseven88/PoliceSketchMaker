@@ -17,9 +17,11 @@ export default function robots(): MetadataRoute.Robots {
           '/*.woff2',
           '/*.ttf',
           '/*.eot',
+          '/*.otf',
           '/favicon.ico',
           '/icon.png',
-          '/apple-icon.png'
+          '/apple-icon.png',
+          '/*.txt'
         ],
         crawlDelay: 1, // 1秒延迟，对服务器友好
       },
@@ -36,9 +38,11 @@ export default function robots(): MetadataRoute.Robots {
           '/*.woff2',
           '/*.ttf',
           '/*.eot',
+          '/*.otf',
           '/favicon.ico',
           '/icon.png',
-          '/apple-icon.png'
+          '/apple-icon.png',
+          '/*.txt'
         ],
         crawlDelay: 1,
       },
@@ -55,9 +59,11 @@ export default function robots(): MetadataRoute.Robots {
           '/*.woff2',
           '/*.ttf',
           '/*.eot',
+          '/*.otf',
           '/favicon.ico',
           '/icon.png',
-          '/apple-icon.png'
+          '/apple-icon.png',
+          '/*.txt'
         ],
         crawlDelay: 2, // Yandex稍微慢一些
       },
@@ -74,9 +80,11 @@ export default function robots(): MetadataRoute.Robots {
           '/*.woff2',
           '/*.ttf',
           '/*.eot',
+          '/*.otf',
           '/favicon.ico',
           '/icon.png',
-          '/apple-icon.png'
+          '/apple-icon.png',
+          '/*.txt'
         ],
         crawlDelay: 3, // 百度爬虫较慢
       },
@@ -94,9 +102,11 @@ export default function robots(): MetadataRoute.Robots {
           '/*.woff2',
           '/*.ttf',
           '/*.eot',
+          '/*.otf',
           '/favicon.ico',
           '/icon.png',
-          '/apple-icon.png'
+          '/apple-icon.png',
+          '/*.txt'
         ],
         crawlDelay: 5, // 其他爬虫更慢的延迟
       }
