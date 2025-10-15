@@ -133,6 +133,10 @@ export default function ContactPage() {
                       <h3 className="text-lg font-semibold text-orange-300 mb-2">Media & Press</h3>
                       <p className="text-gray-300 text-sm">Press inquiries, interviews, and media collaboration</p>
                     </div>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4">
+                      <h3 className="text-lg font-semibold text-yellow-300 mb-2">Legal & Compliance</h3>
+                      <p className="text-gray-300 text-sm">Privacy policy questions, terms of service, and advertising compliance</p>
+                    </div>
                   </div>
                 </div>
               </div>

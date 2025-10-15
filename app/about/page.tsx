@@ -273,6 +273,51 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Funding and Transparency Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Transparency & Funding</h2>
+          <div className="bg-slate-900 rounded-xl p-8">
+            <h3 className="text-2xl font-semibold mb-4 text-blue-300">How We Keep Our Service Free</h3>
+            <p className="text-slate-300 leading-relaxed mb-6">
+              PoliceSketchMaker is committed to providing free access to our basic AI-powered sketch generation tools. 
+              To maintain and improve our services, we use a transparent funding model:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold mb-3 text-green-300">Revenue Sources</h4>
+                <ul className="list-disc pl-6 text-slate-300 space-y-2">
+                  <li><strong>Advertising:</strong> We display relevant ads through Google AdSense and other networks</li>
+                  <li><strong>Premium Features:</strong> Advanced tools for professional users</li>
+                  <li><strong>Enterprise Solutions:</strong> Custom implementations for law enforcement agencies</li>
+                  <li><strong>Community Support:</strong> Voluntary donations from users who value our service</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold mb-3 text-blue-300">Our Commitment</h4>
+                <ul className="list-disc pl-6 text-slate-300 space-y-2">
+                  <li>Core sketch generation will always remain free</li>
+                  <li>No personal data is sold to third parties</li>
+                  <li>Ads are clearly marked and relevant to our users</li>
+                  <li>All revenue goes toward improving our AI technology</li>
+                  <li>Complete transparency in our privacy practices</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-8 p-6 bg-blue-900/20 border border-blue-700 rounded-lg">
+              <h4 className="text-lg font-semibold mb-3 text-blue-300">Advertising Policy</h4>
+              <p className="text-slate-300 leading-relaxed">
+                We partner with reputable advertising networks like Google AdSense to display relevant, 
+                non-intrusive advertisements. These ads help us maintain our free services while ensuring 
+                user privacy is protected. You can learn more about our advertising practices in our 
+                <a href="/privacy" className="text-blue-400 hover:underline ml-1">Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Future Vision */}
         <section className="mb-16">
           <div className="text-center mb-12">

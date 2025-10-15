@@ -51,13 +51,19 @@ export default function Footer() {
             <h3 className="text-white font-medium mb-4">Navigation</h3>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <a href="#generator" className="hover:text-white transition-colors">Generator</a>
+                <a href="/" className="hover:text-white transition-colors">Home</a>
               </li>
               <li>
-                <a href="#examples" className="hover:text-white transition-colors">Examples</a>
+                <a href="/ai-image-describer" className="hover:text-white transition-colors">Image Describer</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">About</a>
+                <a href="/about" className="hover:text-white transition-colors">About</a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+              </li>
+              <li>
+                <a href="/blog" className="hover:text-white transition-colors">Blog</a>
               </li>
             </ul>
           </div>
@@ -70,10 +76,10 @@ export default function Footer() {
                 <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">Disclaimer</a>
+                <a href="/contact" className="hover:text-white transition-colors">Support</a>
               </li>
             </ul>
           </div>
