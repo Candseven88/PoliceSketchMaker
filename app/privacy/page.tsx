@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>To provide and improve our sketch generation services</li>
               <li>To personalize your experience and show relevant content</li>
-              <li>To display targeted advertisements through Google AdSense</li>
+              <li>To display targeted advertisements through Google AdSense and Adsterra</li>
               <li>To analyze website usage and optimize performance</li>
               <li>To communicate with you about our services</li>
               <li>To comply with legal obligations and protect our rights</li>
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Advertising and Third-Party Services</h2>
             <p className="mb-4">
-              Our website displays advertisements provided by third-party advertising networks, including Google AdSense and ADSTERRA. 
+              Our website displays advertisements provided by third-party advertising networks, including Google AdSense and Adsterra. 
               These advertisements help us maintain our free services and continue improving our AI-powered police sketch generation tools.
             </p>
             
@@ -77,6 +77,18 @@ export default function PrivacyPolicy() {
               <li>Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our sites and/or other sites on the Internet</li>
               <li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a></li>
               <li>You can also opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="http://www.aboutads.info/choices/" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">www.aboutads.info</a></li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-300 mb-3">Adsterra Network</h3>
+            <p className="mb-3">
+              We also use Adsterra as an advertising partner to display relevant advertisements on our website. 
+              Adsterra may collect and use information about your visits to provide targeted advertising content.
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4 mb-6">
+              <li>Adsterra uses cookies and tracking technologies to serve personalized ads</li>
+              <li>Data collected may include IP address, browser type, device information, and browsing behavior</li>
+              <li>You can opt out of Adsterra's personalized advertising by visiting their <a href="https://adsterra.com/privacy-policy/" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+              <li>Adsterra complies with GDPR and other privacy regulations</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-blue-300 mb-3">Other Advertising Partners</h3>

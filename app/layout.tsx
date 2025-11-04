@@ -77,6 +77,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         
+        {/* Adsterra Ads */}
+        <script 
+          async 
+          src="https://www.effectivegatecpm.com/cikdkajhd?key=7c981cc934a19fc9686bec2ab78594e3"
+          data-cfasync="false"
+        />
+        
         {/* Structured Data */}
         <WebsiteStructuredData />
         <OrganizationStructuredData />

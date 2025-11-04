@@ -10,6 +10,8 @@ import AboutSection from '@/components/AboutSection'
 import Footer from '@/components/Footer'
 import AnimatedBackground from '@/components/AnimatedBackground'
 import AdBanner from '@/components/AdBanner'
+import AdsterraAd from '@/components/AdsterraAd'
+import GoogleAdSense from '@/components/GoogleAdSense'
 import { SoftwareStructuredData } from '@/components/StructuredData'
 
 function HomePage() {
@@ -46,7 +48,104 @@ function HomePage() {
         {/* Hero Section - 保持原样 */}
         <HeroSection />
         
-        {/* Generator Section - 添加动画背景 */}
+        {/* Face Rate Preview Section - 新增，置于首位 */}
+        <AnimatedBackground variant="light" className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+          <section id="face-rate-preview">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <span>🔥</span>
+                  <span>TRENDING NOW</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  Viral Face Rate Test
+                </h2>
+                <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                  Join millions discovering their face rate! Upload your photo, get an AI beauty score, and share with friends. 
+                  Completely free - just share to unlock your detailed results.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                  <a 
+                    href="/face-rate" 
+                    className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  >
+                    ✨ Get My Face Rate Score
+                  </a>
+                  <a 
+                    href="#generator" 
+                    className="bg-white hover:bg-slate-50 text-slate-700 font-medium py-4 px-8 rounded-xl border border-slate-200 transition-all duration-300"
+                  >
+                    🎨 Create Police Sketch
+                  </a>
+                </div>
+
+                {/* Social Proof */}
+                <div className="flex flex-wrap justify-center gap-8 text-sm text-slate-500">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex -space-x-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full border-2 border-white"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-teal-500 rounded-full border-2 border-white"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-full border-2 border-white"></div>
+                    </div>
+                    <span>2.5M+ tests taken</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="flex text-yellow-400">
+                      <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <span>4.8/5 rating</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span>🔒</span>
+                    <span>100% Private & Secure</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature Highlights */}
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">Instant AI Analysis</h3>
+                  <p className="text-slate-600">
+                    Get your face rate score in seconds with our advanced AI trained on beauty research.
+                  </p>
+                </div>
+                
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">Share & Go Viral</h3>
+                  <p className="text-slate-600">
+                    Share your results on social media and challenge your friends to beat your score!
+                  </p>
+                </div>
+                
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">100% Free</h3>
+                  <p className="text-slate-600">
+                    No hidden costs, no subscriptions. Just share your results to unlock detailed analysis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </AnimatedBackground>
+        
+        {/* Generator Section - 添加动画背景，位置下移 */}
         <AnimatedBackground variant="dark" className="py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <GeneratorSection />
@@ -62,10 +161,13 @@ function HomePage() {
           </section>
         </AnimatedBackground>
         
-        {/* Advertisement Section */}
+        {/* Advertisement Section - 仅使用安全可信的广告网络 */}
         <div className="py-8 bg-slate-950/50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AdBanner size="medium" position="content" className="mb-4" />
+            {/* Google AdSense - 安全可信 */}
+            <GoogleAdSense size="medium" className="mb-4" />
+            {/* Adsterra 广告 - 已验证安全 */}
+            <AdsterraAd size="medium" adType="banner" className="mt-4" />
           </div>
         </div>
         

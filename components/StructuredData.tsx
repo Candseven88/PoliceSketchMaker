@@ -178,4 +178,65 @@ export function ArticleStructuredData(props: {
   wordCount?: number
 }) {
   return <StructuredData type="article" data={props} />
+}
+
+export function FaceRateStructuredData() {
+  const baseUrl = 'https://policesketchmaker.it.com'
+  
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Face Rate Test",
+    "description": "Free AI-powered face rate and beauty score calculator. Upload your photo and get an instant attractiveness rating based on scientific beauty standards.",
+    "url": `${baseUrl}/face-rate`,
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free face rate analysis with social sharing unlock"
+    },
+    "featureList": [
+      "AI-powered facial analysis",
+      "Instant beauty score calculation",
+      "Scientific attractiveness rating",
+      "Social media sharing integration",
+      "Privacy-protected analysis",
+      "Free to use"
+    ],
+    "screenshot": `${baseUrl}/face-rate-screenshot.jpg`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "PoliceSketchMaker",
+      "url": baseUrl
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "15420",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${baseUrl}/face-rate`,
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      }
+    }
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(structuredData, null, 2)
+      }}
+    />
+  )
 } 

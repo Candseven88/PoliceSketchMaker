@@ -57,8 +57,11 @@ export default function HeroSection() {
           className={`text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           style={{ transitionDelay: '200ms' }}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-300">
-            Police Sketch Maker
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
+            Face Rate & Police Sketch
+          </span>
+          <span className="block text-white text-3xl md:text-4xl mt-2">
+            AI Generator
           </span>
         </h1>
         
@@ -74,9 +77,9 @@ export default function HeroSection() {
           className={`text-lg text-center text-slate-400 max-w-4xl mx-auto mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
           style={{ transitionDelay: '500ms' }}
         >
-          Professional AI-powered tool to <strong className="text-slate-300">make sketch of face</strong> from descriptions. 
-          Learn how to create accurate police sketches, transform photos into sketches, and generate 
-          professional portraits used by law enforcement worldwide.
+          Discover your <strong className="text-pink-300">face rate score</strong> with our viral AI beauty test, or create professional 
+          <strong className="text-slate-300"> police sketches</strong> from descriptions. Advanced AI technology for 
+          entertainment and law enforcement professionals worldwide.
         </p>
         
         {/* Keywords Section */}
@@ -84,20 +87,20 @@ export default function HeroSection() {
           className={`flex flex-wrap justify-center gap-3 mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           style={{ transitionDelay: '550ms' }}
         >
+          <span className="bg-gradient-to-r from-pink-600/30 to-purple-600/30 text-pink-300 px-3 py-1 rounded-full text-sm font-medium border border-pink-500/30">
+            🔥 Face Rate Test
+          </span>
           <span className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30">
             Police Sketch Maker
           </span>
           <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-sm font-medium border border-purple-500/30">
-            How to Make Sketch of Face
+            Beauty Score AI
           </span>
           <span className="bg-emerald-600/20 text-emerald-300 px-3 py-1 rounded-full text-sm font-medium border border-emerald-500/30">
-            Photo Sketch Maker Online
+            Photo Sketch Maker
           </span>
           <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-sm font-medium border border-orange-500/30">
-            Image Sketch Maker
-          </span>
-          <span className="bg-pink-600/20 text-pink-300 px-3 py-1 rounded-full text-sm font-medium border border-pink-500/30">
-            Make Picture Sketch
+            AI Face Rating
           </span>
         </div>
         
