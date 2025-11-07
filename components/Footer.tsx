@@ -136,6 +136,23 @@ export default function Footer() {
                 id="devhunt-badge-container" 
                 className="inline-block"
               ></div>
+              
+              {/* Turbo0 Badge */}
+              <a 
+                href="https://turbo0.com/item/police-sketch-maker" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity"
+              >
+                <Image 
+                  src="https://img.turbo0.com/badge-listed-light.svg" 
+                  alt="Listed on Turbo0" 
+                  width={120} 
+                  height={54}
+                  className="rounded"
+                  style={{ height: '54px', width: 'auto' }}
+                />
+              </a>
             </div>
           </div>
           <a

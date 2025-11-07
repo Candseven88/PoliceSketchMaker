@@ -162,6 +162,9 @@ npm run dev
 - **DevHunt**: Developer tools showcase badge
   - Dynamic badge integration using external script
   - Developer community exposure
+- **Turbo0**: AI tools directory listing badge
+  - Product discovery and listing platform
+  - Additional SEO backlink and visibility
 - **Badge Location**: Footer component displays all featured badges on every page
 
 ### Target Keywords
