@@ -154,8 +154,15 @@ npm run dev
 
 ### Featured On
 - **Startup Fame**: Featured startup badge displayed in footer for SEO backlink benefits
-- **High-Quality Backlink**: Do-follow link from DR 80+ domain to improve search rankings
-- **Badge Location**: Footer component displays featured badge on all pages
+  - High-Quality Backlink: Do-follow link from DR 80+ domain
+  - 10K+ monthly users for additional traffic
+- **Fazier**: Product launch platform badge for increased visibility
+  - Community-driven product discovery platform
+  - Additional backlink and exposure
+- **DevHunt**: Developer tools showcase badge
+  - Dynamic badge integration using external script
+  - Developer community exposure
+- **Badge Location**: Footer component displays all featured badges on every page
 
 ### Target Keywords
 - police sketch maker, how to make sketch of face, make picture sketch

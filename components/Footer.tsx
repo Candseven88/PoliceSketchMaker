@@ -2,6 +2,7 @@
 
 import { Shield, Heart, Mail, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import Script from 'next/script'
 import AdBanner from './AdBanner'
 
 export default function Footer() {
@@ -96,8 +97,9 @@ export default function Footer() {
             <p className="mb-2">
               &copy; {new Date().getFullYear()} PoliceSketchMaker. All rights reserved.
             </p>
-            {/* Startup Fame Badge */}
-            <div className="mt-3">
+            {/* Featured Badges */}
+            <div className="mt-3 flex flex-wrap gap-3 items-center">
+              {/* Startup Fame Badge */}
               <a 
                 href="https://startupfa.me/s/policesketchmaker?utm_source=policesketchmaker.it.com" 
                 target="_blank" 
@@ -112,6 +114,28 @@ export default function Footer() {
                   className="rounded"
                 />
               </a>
+              
+              {/* Fazier Badge */}
+              <a 
+                href="https://fazier.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity"
+              >
+                <Image 
+                  src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" 
+                  alt="Fazier badge" 
+                  width={120} 
+                  height={36}
+                  className="rounded"
+                />
+              </a>
+              
+              {/* DevHunt Badge */}
+              <div 
+                id="devhunt-badge-container" 
+                className="inline-block"
+              ></div>
             </div>
           </div>
           <a
@@ -123,6 +147,14 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      
+      {/* DevHunt Script */}
+      <Script
+        defer
+        data-url="https://devhunt.org/tool/wplace-pixel-tool"
+        src="https://cdn.jsdelivr.net/gh/sidiDev/devhunt-banner/indexV0.js"
+        strategy="lazyOnload"
+      />
     </footer>
   )
 } 
