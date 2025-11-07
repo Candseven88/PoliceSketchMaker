@@ -152,6 +152,11 @@ npm run dev
 - **Sponsored Content**: Clearly marked advertisements with proper attribution
 - **Privacy Compliant**: All advertising follows privacy regulations and user consent requirements
 
+### Featured On
+- **Startup Fame**: Featured startup badge displayed in footer for SEO backlink benefits
+- **High-Quality Backlink**: Do-follow link from DR 80+ domain to improve search rankings
+- **Badge Location**: Footer component displays featured badge on all pages
+
 ### Target Keywords
 - police sketch maker, how to make sketch of face, make picture sketch
 - photo sketch maker online, image sketch maker, make sketches of people

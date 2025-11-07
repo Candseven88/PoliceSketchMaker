@@ -96,6 +96,23 @@ export default function Footer() {
             <p className="mb-2">
               &copy; {new Date().getFullYear()} PoliceSketchMaker. All rights reserved.
             </p>
+            {/* Startup Fame Badge */}
+            <div className="mt-3">
+              <a 
+                href="https://startupfa.me/s/policesketchmaker?utm_source=policesketchmaker.it.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity"
+              >
+                <Image 
+                  src="https://startupfa.me/badges/featured-badge-small.webp" 
+                  alt="PoliceSketchMaker - Featured on Startup Fame" 
+                  width={224} 
+                  height={36}
+                  className="rounded"
+                />
+              </a>
+            </div>
           </div>
           <a
             href="mailto:support@policesketchmaker.com"
