@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['console.apify.com', 'api.apify.com'],
+    domains: ['console.apify.com', 'api.apify.com', 'startupfa.me', 'fazier.com', 'img.turbo0.com'],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
   },

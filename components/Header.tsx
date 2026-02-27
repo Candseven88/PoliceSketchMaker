@@ -116,6 +116,22 @@ export default function Header() {
               )}
             </Link>
             <Link 
+              href="/punch-the-monkey" 
+              className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
+                isActiveLink('/punch-the-monkey', 'Punch')
+                  ? 'text-white bg-gradient-to-r from-amber-600/30 to-orange-600/30 shadow-lg shadow-amber-600/20' 
+                  : 'text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-amber-600/10 hover:to-orange-600/10'
+              }`}
+            >
+              <span className="flex items-center space-x-1">
+                <span>Punch</span>
+                <span className="text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white px-1.5 py-0.5 rounded-full">🐒</span>
+              </span>
+              {isActiveLink('/punch-the-monkey', 'Punch') && (
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full"></div>
+              )}
+            </Link>
+            <Link 
               href={getLink('generator')} 
               className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
                 isActiveLink(getLink('generator'), 'Generator')
@@ -226,6 +242,23 @@ export default function Header() {
               </span>
               {isActiveLink('/face-rate', 'Face Rate') && (
                 <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full"></div>
+              )}
+            </Link>
+            <Link 
+              href="/punch-the-monkey" 
+              className={`flex items-center justify-between py-3 px-3 rounded-lg font-medium border-b border-slate-800/50 transition-all duration-300 ${
+                isActiveLink('/punch-the-monkey', 'Punch')
+                  ? 'text-white bg-gradient-to-r from-amber-600/30 to-orange-600/30 shadow-lg shadow-amber-600/20' 
+                  : 'text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-amber-600/10 hover:to-orange-600/10'
+              }`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span className="flex items-center space-x-2">
+                <span>Punch the Monkey</span>
+                <span className="text-xs">🐒</span>
+              </span>
+              {isActiveLink('/punch-the-monkey', 'Punch') && (
+                <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full"></div>
               )}
             </Link>
             <Link 
